@@ -4,11 +4,41 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        DishStack tempStack = new DishStack();
+        Dish oneDish = new Dish("The first dish");
+        Dish twoDish = new Dish("the second dish");
+        Dish redDish = new Dish("A bowl");
+        Dish blueDish = new Dish("A large plate");
+
+        // The variable stack_size should equal zero.
+        int stackSize = tempStack.size();
+
+        tempStack.push(oneDish);
+        tempStack.push(twoDish);
+        tempStack.push(redDish);
+        tempStack.push(blueDish);
+
+        // The variable sizeAfterPushes should equal four.
+        int sizeAfterPushes = tempStack.size();
+
+        // The variable peekedDish should have a description of "A dish with a blue fish pattern on it"
+        Dish peekedDish = tempStack.peek();
+
+        // The variable poppedDish should have a description of "A dish with a blue fish pattern on it"
+        Dish poppedDish = tempStack.pop();
+
+        // The variable anotherPoppedDish should have a description of "A dish with a red fish pattern on it"
+        Dish anotherPoppedDish = tempStack.pop();
+
+        // The variable finalSize should equal two.
+        int finalSize = tempStack.size();
+
+        System.out.println("Stack size: " + stackSize);
+        System.out.println("Size after pushes: " + sizeAfterPushes);
+        System.out.println("Peeked dish: " + peekedDish.description);
+        System.out.println("Popped dish: " + poppedDish.description);
+        System.out.println("Another popped dish: " + anotherPoppedDish.description);
+        System.out.println("Final size: " + finalSize);
     }
 }
