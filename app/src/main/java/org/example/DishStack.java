@@ -18,21 +18,21 @@ public class DishStack {
 
   public void push(Dish dish){
     if (this.last == this.stackList.length - 1) {
-      throw new IllegalStateException("Stack is full");
+      System.out.println("Stack is full");
     }
     this.stackList[++this.last] = dish;
   }
 
   public Dish pop(){
     if (this.last == -1) {
-      throw new IllegalStateException("Stack is empty");
+      System.out.println("Stack is emprty");
     }
     return this.stackList[this.last--];
   }
 
   public Dish peek(){
     if (this.last == -1) {
-      throw new IllegalStateException("Stack is empty");
+      System.out.println("Stack is emprty");
     }
     return this.stackList[this.last];
   }
